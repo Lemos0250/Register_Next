@@ -1,10 +1,23 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import Layout from '@/components/Layout'
+import Cliente from '../core/Cliente'
+import Layout from '../components/Layout'
+import Tabela from '../components/Tabela'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
+  const cliente = [
+    new Cliente('Marcia', 60 ,'1'),
+    new Cliente('João', 21 ,'2'),
+    new Cliente('Ana', 19 ,'3'),
+    new Cliente('Vinicius', 21 ,'4'),
+    new Cliente('Rafa', 21 ,'5'),
+    new Cliente('Daniel', 24 ,'6'),
+
+  ]
+
   return (
     <div className={`
     flex 
@@ -14,7 +27,7 @@ export default function Home() {
     text-white 
     `}>
       <Layout titulo={'Cadastro Simples'}>
-        <span>Conteudo</span>
+        <Tabela cliente={cliente}></Tabela>
       </Layout>
     </div>
   )
